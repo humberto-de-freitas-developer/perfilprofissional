@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfólio</title>
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contato" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+    <main id="inicio" class="cabecalho">
+        <img src="./img/Humberto.jpeg" alt="Foto de Humberto de Freitas" class="foto-perfil">
+        <h1>Humberto Neto</h1>
+        <p class="cabecalho-sub-titulo">Gestor de tecnologia da Informação</p>
+    </main>
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Se você está procurando um líder para conduzir um projeto com alta rotatividade de profissionais, sob
+                pressão, com experiência em trabalhar com a geração Z e que não tem medo de novos desafios, então você
+                encontrou. Eu sou esse profissional!
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <a href="https://humberto-de-freitas-developer.github.io/projeto01/" target="_blank">
+                    <img src="./img/projeto01.jpg" alt="Foto do primeiro projeto" class="projetos-imagem">
+                    <div class="caixa-textos-projetos">
+                        <h3 class="info-projetos">Basic parking system</h3>
+                        <p class="paragrafo-projetos">É um sistema simples de estacionamento, no qual integrei uma tela
+                            de login que realiza a validação do usuário para ter acesso ao sistema de estacionamento.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="projetos-card">
+                <a href="https://humberto-de-freitas-developer.github.io/CRUD/" target="_blank">
+                    <img src="./img/projeto02.png" alt="Foto do primeiro projeto" class="projetos-imagem">
+
+                    <div class="caixa-textos-projetos">
+                        <h3 class="info-projetos">CRUD</h3>
+                        <p class="paragrafo-projetos">Sistema de cadastro de funcionários, no qual é possível adicionar
+                            o nome, a função e o salário, além de editar e excluir registros.</p>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="projetos-card">
+                <a href="https://github.com/humberto-de-freitas-developer" target="_blank">
+                    <img src="./img/projeto03.png" alt="Foto do primeiro projeto" class="projetos-imagem">
+                    <div class="caixa-textos-projetos">
+                        <h3 class="info-projetos">Github Profile</h3>
+                        <p class="paragrafo-projetos">Segue o meu perfil no GitHub, onde você vai encontrar outros
+                            projetos que desenvolvi em meus repositórios e também as linguagens que foram utilizadas.
+                        </p>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contato" class="contato">
+        <h2 class="contato-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(Event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea placeholder="Digite a sua mensagem" rows="6" id="mensagem" class="campo-form"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar mensagem para WhastApp</button>
+        </form>
+    </section>
+    <script>
+        function enviarWhats(Event) {
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5562994338677';
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+            window.open(url, '_blank')
+        }
+    </script>
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">© 2025 - Todos os direitos reservados | Desenvolvido por Humberto</p>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/humberto-neto-04836b184/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/humberto-de-freitas-developer" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN pública e gratuita do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+
+</body>
+
+</html>
